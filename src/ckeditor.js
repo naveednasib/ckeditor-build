@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 /**
  * @license Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
@@ -32,7 +33,8 @@ import Font from '@ckeditor/ckeditor5-font/src/font';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import Mention from '@ckeditor/ckeditor5-mention/src/mention';
 
-export default class ClassicEditor extends ClassicEditorBase {}
+export default class ClassicEditor extends ClassicEditorBase {
+}
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
@@ -66,9 +68,99 @@ ClassicEditor.builtinPlugins = [
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
-
-	toolbar: [ 'heading', '|', 'bold', 'italic', 'fontSize' ],
-
-	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'en'
-};
+	fontFamily: {
+		options: [
+			'default',
+			' Arial',
+			'comic-sans-MS',
+			'Courier New',
+			'Tahoma',
+			'georgia',
+			'Verdana',
+			'Time new roman',
+			'Trebuchet MS',
+			'Lucid Sans Unicode',
+		]
+	},
+	fontSize: {
+		options: [
+			9,
+			11,
+			13,
+			'default',
+			17,
+			19,
+			21
+		]
+	},
+	// eslint-disable-next-line max-len
+	toolbar: [ 'heading', '|', 'bold', 'italic', 'strikethrough', 'underline', '|', 'numberedList', 'bulletedList', '|', 'fontSize', 'fontColor', 'fontBackgroundColor', 'fontFamily', '|', 'link', 'insertTable', 'Alignment' ],
+	heading:
+        {
+        	options: [
+        		{
+        			model: 'paragraph',
+        			title: 'Paragraph',
+        			class: 'ck-heading_paragraph'
+        		},
+        		{
+        			model: 'heading1',
+        			view: 'h1',
+        			title: 'Heading 1',
+        			class: 'ck-heading_heading1'
+        		},
+        		{
+        			model: 'heading2',
+        			view: 'h2',
+        			title: 'Heading 2',
+        			class: 'ck-heading_heading2'
+        		},
+        		{
+        			model: 'heading3',
+        			view: 'h3',
+        			title: 'Heading 3',
+        			class: 'ck-heading_heading3'
+        		},
+        		{
+        			model: 'heading4',
+        			view: 'h3',
+        			title: 'Heading 4',
+        			class: 'ck-heading_heading4'
+        		},
+        		{
+        			model: 'heading5',
+        			view: 'h4',
+        			title: 'Heading 5',
+        			class: 'ck-heading_heading5'
+        		},
+        		{
+        			model: 'heading6',
+        			view: 'h6',
+        			title: 'Heading 6',
+        			class: 'ck-heading_heading6'
+        		},
+        		{
+        			model: 'address',
+        			view: 'address',
+        			title: 'address',
+        			class: 'ck-address'
+        		},
+        		{
+        			model: 'div',
+        			view: 'div',
+        			title: 'normal div',
+        			class: 'ck-normal-div'
+        		},
+        		{
+        			model: 'hr',
+        			view: 'hr',
+        			title: 'line break',
+        			class: 'hr'
+        		}
+        	]
+        },
+	table: {
+		contentToolbar: [ 'tableColumn', 'tableRow', 'mergeTableCells' ]
+	}
+}
+;
