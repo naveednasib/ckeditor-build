@@ -1,0 +1,19 @@
+{
+  "name": "ckeditor5-build-all",
+  "version": "1.0.4",
+  "description": "ck editor with custom build custom plug in integration ",
+  "main": "./build/ckeditor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/naveednasib/ckeditor-build"
+  },
+  "keywords": [
+    "ckeditor5",
+    "ckeditorcustombuild"
+  ],
+  "author": "Naveed Nasib",
+  "license": "ISC"
+}
